@@ -68,6 +68,21 @@ public class BobaManager : MonoBehaviour
     }
 
     #endregion
+
+    #region Butto Presses
+
+    public void OnUpgradeButtonPress()
+    {
+        MainGameCanvas.SetActive(false );
+        _upgradeCanvas.SetActive(true );
+    }
+
+    public void OnResumeButtonPress()
+    {
+        _upgradeCanvas.SetActive(false);
+        MainGameCanvas.SetActive(true);
+    }
+    #endregion
 }
 
 
