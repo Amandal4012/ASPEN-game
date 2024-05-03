@@ -9,7 +9,7 @@ public class BobaManager : MonoBehaviour
     [SerializeField] private GameObject _upgradeCanvas;
     [SerializeField] private TextMeshProUGUI _bobaCountText;
     [SerializeField] private TextMeshProUGUI _bobaPerSecondText;
-    [SerializeField] private GameObject _BobaObj;
+    [SerializeField] private GameObject _bobaObj;
     public GameObject BobaTextPopup;
     [SerializeField] private GameObject _backgroundnObj;
 
@@ -40,6 +40,20 @@ public class BobaManager : MonoBehaviour
         MainGameCanvas.SetActive(true);
     }
 
+    #region On Boba Clicked
+
+    public void OnBobaClicked()
+    {
+        IncreaseBoba();
+    }
+
+    public void IncreaseCookie()
+    {
+        CurrentBobaCount += 1 + BobaPerClickUpgrade;
+        UpdateBobaUI() ;
+
+    }
+
     #region UI Updates
 
     private void UpdateBobaUI()
@@ -51,6 +65,8 @@ public class BobaManager : MonoBehaviour
     {
         _bobaPerSecondText.text = CurrentBobaPerSecond.ToString() + " P/S";
     }
+
+    #endregion
 }
 
 
