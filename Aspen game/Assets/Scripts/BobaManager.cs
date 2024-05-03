@@ -47,7 +47,7 @@ public class BobaManager : MonoBehaviour
         IncreaseBoba();
     }
 
-    public void IncreaseCookie()
+    public void IncreaseBoba()
     {
         CurrentBobaCount += 1 + BobaPerClickUpgrade;
         UpdateBobaUI() ;
