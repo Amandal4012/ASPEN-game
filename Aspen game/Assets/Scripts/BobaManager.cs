@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 public class BobaManager : MonoBehaviour
 {
     public Sprite SecondBoba;
@@ -136,6 +137,7 @@ public class BobaManager : MonoBehaviour
         if (CurrentBobaCount == 50)
         {
             oldImage.sprite = newImage;
+            Debug.Log("You win!");
         }
 
     }
