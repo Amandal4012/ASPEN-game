@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class BobaManager : MonoBehaviour
 {
+    public Sprite SecondBoba;
+    public Image oldImage;
+    public Sprite newImage; 
     public static BobaManager instance;
     public GameObject MainGameCanvas;
     [SerializeField] private GameObject _upgradeCanvas;
@@ -26,6 +30,15 @@ public class BobaManager : MonoBehaviour
 
     public double BobaPerClickUpgrade { get; set; }
 
+    public SpriteRenderer spriteRenderer;
+
+    
+
+    void ChangeSprite()
+
+    {
+        spriteRenderer.sprite = SecondBoba;
+    }
     private void Awake()
     {
         if (instance == null)
@@ -112,6 +125,21 @@ public class BobaManager : MonoBehaviour
         }
     }
     #endregion
+
+     void Start()
+    {
+
+        
+    }
+    public void ImageChange()
+    {
+        if (CurrentBobaCount == 50)
+        {
+            oldImage.sprite = newImage;
+        }
+
+    }
+
 }
 
 
