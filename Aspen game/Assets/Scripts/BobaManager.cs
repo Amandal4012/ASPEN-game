@@ -69,7 +69,7 @@ public class BobaManager : MonoBehaviour
 
     #endregion
 
-    #region Butto Presses
+    #region Button Presses
 
     public void OnUpgradeButtonPress()
     {
@@ -83,6 +83,36 @@ public class BobaManager : MonoBehaviour
         MainGameCanvas.SetActive(true);
     }
     #endregion
+
+    #region Simple Increases
+
+    public void SimpleBobaIncrease(double amount)
+    {
+        CurrentBobaCount += amount;
+        UpdateBobaUI();
+    }
+
+    public void SimpleBobaPerSecondIncrease(double amount)
+    {
+        CurrentBobaPerSecond += amount;
+        UpdateBobaUI();
+    }
+    #endregion
+
+    #region
+    public void OnUpgradeButtonClick(BobaUpgrade upgrade, UpgradeButtonReferences buttonRef)
+    {
+        if(CurrentBobaCount >= upgrade.CurrentUpgradeCost)
+        {
+            upgrade.ApplyUpgrade();
+            CurrentBobaCount -= upgrade.CurrentUpgradeCost;
+            UpdateBobaUI();
+
+            upgrade.CurrentUpgradeCost = Mathf.Round((float)CurrentBobaCount);
+        }
+    }
+    #endregion
 }
+
 
 
