@@ -23,6 +23,7 @@ public class BobaManager : MonoBehaviour
     [SerializeField] private Transform _upgradeUIParent;
     public GameObject BobaPerSecondObjToSpawn;
 
+
     public double CurrentBobaCount {  get; set; }
 
     public double CurrentBobaPerSecond { get; set; }
@@ -70,12 +71,12 @@ public class BobaManager : MonoBehaviour
     #endregion
 
     #region UI Updates
-
+    
     private void UpdateBobaUI()
     {
-        _bobaCountText.text = CurrentBobaCount.ToString();
+         _bobaCountText.text = CurrentBobaCount.ToString();
     }
-
+    
     private void UpdateBobaPerSecondUI()
     {
         _bobaPerSecondText.text = CurrentBobaPerSecond.ToString() + " P/S";
