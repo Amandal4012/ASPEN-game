@@ -99,7 +99,7 @@ public class BobaManager : MonoBehaviour
     }
     #endregion
 
-    #region
+    #region Upgrade Click
     public void OnUpgradeButtonClick(BobaUpgrade upgrade, UpgradeButtonReferences buttonRef)
     {
         if(CurrentBobaCount >= upgrade.CurrentUpgradeCost)
